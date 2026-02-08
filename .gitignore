@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/bin/Debug
+/Configs
+/obj/Debug
+/packages
+/Forest-Mod.csproj
+/Forest-Mod.sln
