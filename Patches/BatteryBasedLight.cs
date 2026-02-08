@@ -4,11 +4,10 @@ using TheForest.Items.World;
 
 namespace Forest_Mod.Patches
 {
-    // Token: 0x02000004 RID: 4
+
     [HarmonyPatch(typeof(BatteryBasedLight), "Awake")]
     internal class BatteryBasedLight_Patch
     {
-        // Token: 0x06000005 RID: 5 RVA: 0x000021C4 File Offset: 0x000003C4
         private static bool Prefix(BatteryBasedLight __instance)
         {
             __instance._mainLight.range = 260f;
