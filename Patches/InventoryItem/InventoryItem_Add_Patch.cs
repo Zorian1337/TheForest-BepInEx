@@ -20,7 +20,7 @@ namespace Forest_Mod.Patches
                 int num = ItemDatabase.ItemIndexById(__instance._itemId);
                 Item item = ItemDatabase.Items[num];
 
-                Main._Logger.LogInfo("Item: {item._name} Amount: {__instance._amount} Type: {item._type.ToString()}");
+                Main._Logger.LogInfo($"Item: {item._name} Amount: {__instance._amount} Type: {item._type.ToString()}");
                 int MaxLimit = ItemInventoryConfig.CustomStackLimit.Value;
                 int SupposedAmount = __instance._amount + amount;
 
@@ -61,6 +61,9 @@ namespace Forest_Mod.Patches
 
             // Filter via type
             if ((item._type & Item.Types.Weapon) > 0) return true; // runs original handler for stack limits
+
+            // Lazy Filter 
+            if (!(item is null) && item._maxAmount == 1) return true; // runs original handler for item if its meant to be capped at 1
 
             return false; // No Items sent here were detected as invalid for custom item stack
         }
