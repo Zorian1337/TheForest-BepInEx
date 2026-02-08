@@ -75,11 +75,8 @@
     <Compile Include="Configs\ItemInventoryConfig.cs" />
     <Compile Include="Configs\WireAllConfigs.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="Math\GetTrajectoryPoint.cs" />
-    <Compile Include="Math\TrajectoryDrawer.cs" />
     <Compile Include="Patches\BatteryBasedLight.cs" />
     <Compile Include="Patches\BowController\BowController_Arrow_Patch.cs" />
-    <Compile Include="Patches\BowController\BowController_Update_Patch.cs" />
     <Compile Include="Patches\BurnableCloth_Patch.cs" />
     <Compile Include="Patches\InventoryItem\InventoryItem_Add_Patch.cs" />
     <Compile Include="Patches\InventoryItem\InventoryItem_MaxAmount_Patch.cs" />
