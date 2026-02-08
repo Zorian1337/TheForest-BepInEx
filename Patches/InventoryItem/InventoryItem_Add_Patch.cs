@@ -6,72 +6,63 @@ using TheForest.Items.Inventory;
 
 namespace Forest_Mod.Patches
 {
-    // Token: 0x02000009 RID: 9
+
     [HarmonyPatch(typeof(InventoryItem), "Add")]
     public class InventoryItem_Add_Patch
     {
-        // Token: 0x0600000F RID: 15 RVA: 0x00002438 File Offset: 0x00000638
+
         private static bool Prefix(InventoryItem __instance, int amount, bool isEquiped, ref int __result)
         {
-            bool flag = !ItemInventoryConfig.IsEnabled.Value;
-            bool result;
-            if (flag)
-            {
-                result = true;
-            }
+            // Checks if custom stash limit is enabled
+            if (!ItemInventoryConfig.IsEnabled.Value) return true; // if disabled runs the original function
             else
             {
                 int num = ItemDatabase.ItemIndexById(__instance._itemId);
                 Item item = ItemDatabase.Items[num];
-                Main._Logger.LogInfo(string.Format("Item: {0} Amount: {1} Type: {2}", item._name, __instance._amount, item._type.ToString()));
-                int value = ItemInventoryConfig.CustomStackLimit.Value;
-                int num2 = __instance._amount + amount;
-                bool flag2 = (item._type & 4096) > 0;
-                if (flag2)
+
+                Main._Logger.LogInfo("Item: {item._name} Amount: {__instance._amount} Type: {item._type.ToString()}");
+                int MaxLimit = ItemInventoryConfig.CustomStackLimit.Value;
+                int SupposedAmount = __instance._amount + amount;
+
+                // Check if item is valid for custom stack limit
+                if (IsLimitedStackItem(item)) return true;
+
+                __instance._maxAmount = MaxLimit;
+
+                if (SupposedAmount > MaxLimit)
                 {
-                    result = true;
+                    int num3 = SupposedAmount - MaxLimit;
+                    __instance._amount = MaxLimit;
+                    __instance._amount += __result;
                 }
                 else
                 {
-                    string text = item._name.ToLower();
-                    string a = text;
-                    if (!(a == "pot"))
-                    {
-                        if (!(a == "pouch"))
-                        {
-                            __instance._maxAmount = value;
-                            bool flag3 = num2 > value;
-                            if (flag3)
-                            {
-                                int num3 = num2 - value;
-                                __instance._amount = value;
-                                __instance._amount += __result;
-                            }
-                            else
-                            {
-                                Main._Logger.LogInfo(string.Format("[Item: {0} Added: {1} Max: {2} Type: {3}]", new object[]
-                                {
-                                    item._name,
-                                    amount,
-                                    item._maxAmount,
-                                    item._type.ToString()
-                                }));
-                                __instance._amount += amount;
-                            }
-                            result = false;
-                        }
-                        else
-                        {
-                            result = true;
-                        }
-                    }
-                    else
-                    {
-                        result = true;
-                    }
+                    Main._Logger.LogInfo($"[Item: {item._name} Added: {amount} Max: {item._maxAmount} Type: {item._type.ToString()}]");
+                    __instance._amount += amount;
                 }
+
+                return false; // allows this custom function to run
             }
-            return result;
+
+        }
+
+        public static bool IsLimitedStackItem(Item item)
+        {
+            // Filter via Id
+
+
+            // Filter via name
+            string name = item._name.ToLower();
+            switch (name)
+            {
+                case "pot": return true;
+                case "pouch": return true;
+            }
+
+            // Filter via type
+            if ((item._type & Item.Types.Weapon) > 0) return true; // runs original handler for stack limits
+
+            return false; // No Items sent here were detected as invalid for custom item stack
         }
     }
 }
