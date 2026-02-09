@@ -22,6 +22,7 @@ namespace Forest_Mod
 
         private void Awake()
         {
+            test
             Main.Instance = this;
             Main._Logger = base.Logger;
             base.Logger.LogInfo($"{ModName} loaded");
