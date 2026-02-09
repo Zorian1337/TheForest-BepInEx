@@ -12,7 +12,7 @@ using Forest_Mod.Extensions;
 namespace Forest_Mod.Configs
 {
     // Token: 0x0200000E RID: 14
-    internal static class ItemInventoryConfig
+    public static class ItemInventoryConfig
     {
         public static ConfigEntry<bool> IsEnabled;
 
@@ -48,7 +48,7 @@ namespace Forest_Mod.Configs
             ItemInventoryConfig.LimitStackById = config.Bind<string>(SECTION, "LimitStackById", "[]", "Limits the amount of max items by ItemId");
             ItemInventoryConfig.LimitStackByName = config.Bind<string>(SECTION, "LimitStackByName", "[pot=1, TurtleShell=10, SpearUpgraded=5, Spear=5]", "Limits the amount of max items by Name");
             ItemInventoryConfig.LimitStackByType = config.Bind<string>(SECTION, "LimitStackByType", "[Weapon=1]", "Limits the amount of max items by Type");
-            ItemInventoryConfig.UseDefaultStackLimitByType = config.Bind<string>(SECTION, "UseDefaultStackLimitByType", "[Weapon, Story, Armor]", "Disables CustomStackLimit based on ItemTypeFlag (Equipment, CraftingTool, CraftingMaterial, Craftable, Editable, Droppable, Ammo, Projectile, Special, Plant, RangedWeapon, Story, Weapon, Extension, Armor)");
+            ItemInventoryConfig.UseDefaultStackLimitByType = config.Bind<string>(SECTION, "UseDefaultStackLimitByType", "[Weapon, Story]", "Disables CustomStackLimit based on ItemTypeFlag (Equipment, CraftingTool, CraftingMaterial, Craftable, Editable, Droppable, Ammo, Projectile, Special, Plant, RangedWeapon, Story, Weapon, Extension, Armor)");
             ItemInventoryConfig.Parse();
         }
 
@@ -68,7 +68,7 @@ namespace Forest_Mod.Configs
 
         public class StackLimitTracker
         {
-            public enum LimitedBy { ById, ByName, ByType, ByDefaultType }
+            public enum LimitedBy { NONE, ById, ByName, ByType, ByDefaultType }
             public int MaxAmount { get; set; } = -1;
             public LimitedBy TypeLimit { get; set; }
 

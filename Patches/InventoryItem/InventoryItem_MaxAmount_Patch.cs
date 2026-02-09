@@ -3,6 +3,7 @@ using Forest_Mod.Configs;
 using HarmonyLib;
 using TheForest.Items;
 using TheForest.Items.Inventory;
+using static Forest_Mod.Configs.ItemInventoryConfig;
 
 namespace Forest_Mod.Patches
 {
@@ -20,9 +21,9 @@ namespace Forest_Mod.Patches
                 Item item = ItemDatabase.Items[num];
 
                 // Checks if item is limited or unlimited via our settings
-                if (InventoryItem_Add_Patch.IsLimitedStackItem(item)) return true; // uses original stack limits
+                if (InventoryItem_Add_Patch.IsLimitedStackItemV2(item, out StackLimitTracker.LimitedBy filterType, out int MaxAmount)) return true; // uses original stack limits
 
-                __result = 1000;
+                __result = MaxAmount;//1000;
                 return false;
             }
         }
