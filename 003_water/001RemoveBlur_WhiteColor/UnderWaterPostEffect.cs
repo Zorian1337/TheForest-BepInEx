@@ -3,20 +3,25 @@ using UnityEngine;
 
 namespace Ceto
 {
-	// Token: 0x020001F4 RID: 500
+	// Token: 0x020001B4 RID: 436
 	[AddComponentMenu("Ceto/Camera/UnderWaterPostEffect")]
 	[RequireComponent(typeof(Camera))]
 	public class UnderWaterPostEffect : MonoBehaviour
 	{
-		// Token: 0x06000EBB RID: 3771 RVA: 0x0000B474 File Offset: 0x00009674
+		// Token: 0x06000DAB RID: 3499 RVA: 0x00071E1B File Offset: 0x0007021B
+		public UnderWaterPostEffect()
+		{
+		}
+
+		// Token: 0x06000DAC RID: 3500 RVA: 0x00071E3C File Offset: 0x0007023C
 		private void Start()
 		{
 			this.m_material = new Material(this.underWaterPostEffectSdr);
+			this.m_imageBlur = new ImageBlur(this.blurShader);
 			this.m_query = new WaveQuery();
-			// MOD - Remove m_blur object
 		}
 
-		// Token: 0x06000EBC RID: 3772 RVA: 0x000C61F8 File Offset: 0x000C43F8
+		// Token: 0x06000DAD RID: 3501 RVA: 0x00071E6C File Offset: 0x0007026C
 		private void LateUpdate()
 		{
 			Camera component = base.GetComponent<Camera>();
@@ -27,14 +32,15 @@ namespace Ceto
 				if (!this.m_underWaterIsVisible)
 				{
 					underWater.underwaterMode = UNDERWATER_MODE.ABOVE_ONLY;
-					return;
 				}
-				underWater.underwaterMode = UNDERWATER_MODE.ABOVE_AND_BELOW;
+				else
+				{
+					underWater.underwaterMode = UNDERWATER_MODE.ABOVE_AND_BELOW;
+				}
 			}
 		}
 
-		// Token: 0x06000EBD RID: 3773 RVA: 0x000C6268 File Offset: 0x000C4468
-		// MOD - as it says, this is a function thats renders water
+		// Token: 0x06000DAE RID: 3502 RVA: 0x00071EEC File Offset: 0x000702EC
 		private void OnRenderImage(RenderTexture source, RenderTexture destination)
 		{
 			if (this.underWaterPostEffectSdr == null || this.m_material == null || SystemInfo.graphicsShaderLevel < 30)
@@ -69,8 +75,8 @@ namespace Ceto
 			float aspect = component.aspect;
 			Matrix4x4 identity = Matrix4x4.identity;
 			float num = fieldOfView * 0.5f;
-			Vector3 b = component.transform.right * nearClipPlane * Mathf.Tan(num * 0.017453292f) * aspect;
-			Vector3 b2 = component.transform.up * nearClipPlane * Mathf.Tan(num * 0.017453292f);
+			Vector3 b = component.transform.right * nearClipPlane * Mathf.Tan(num * 0.0174532924f) * aspect;
+			Vector3 b2 = component.transform.up * nearClipPlane * Mathf.Tan(num * 0.0174532924f);
 			Vector3 vector = component.transform.forward * nearClipPlane - b + b2;
 			float d = vector.magnitude * farClipPlane / nearClipPlane;
 			vector.Normalize();
@@ -97,13 +103,18 @@ namespace Ceto
 			this.m_material.SetColor("_MultiplyCol", value);
 			RenderTexture temporary = RenderTexture.GetTemporary(source.width, source.height, 0, RenderTextureFormat.Default);
 			this.CustomGraphicsBlit(source, temporary, this.m_material, 0);
+			this.m_imageBlur.BlurIterations = this.blurIterations;
+			
+			// Disables our underwater blur with a simple toggle
+			this.m_imageBlur.BlurMode = ImageBlur.BLUR_MODE.OFF; // Original was this.blurMode
+			this.m_imageBlur.BlurSpread = this.blurSpread;
+			this.m_imageBlur.Blur(temporary);
 			this.m_material.SetTexture("_BelowTex", temporary);
-			// MOD - Remove all blut code from render function.
 			Graphics.Blit(source, destination, this.m_material, 1);
 			RenderTexture.ReleaseTemporary(temporary);
 		}
 
-		// Token: 0x06000EBE RID: 3774 RVA: 0x000C6550 File Offset: 0x000C4750
+		// Token: 0x06000DAF RID: 3503 RVA: 0x00072234 File Offset: 0x00070634
 		private void CustomGraphicsBlit(RenderTexture source, RenderTexture dest, Material mat, int pass)
 		{
 			RenderTexture.active = dest;
@@ -124,7 +135,7 @@ namespace Ceto
 			GL.PopMatrix();
 		}
 
-		// Token: 0x06000EBF RID: 3775 RVA: 0x000C6624 File Offset: 0x000C4824
+		// Token: 0x06000DB0 RID: 3504 RVA: 0x00072308 File Offset: 0x00070708
 		private bool UnderWaterIsVisible(Camera cam)
 		{
 			if (Ocean.Instance == null)
@@ -161,48 +172,52 @@ namespace Ceto
 			return false;
 		}
 
-		// Token: 0x04000E5B RID: 3675
+		// Token: 0x06000DB1 RID: 3505 RVA: 0x0007242C File Offset: 0x0007082C
+		// Note: this type is marked as 'beforefieldinit'.
+		static UnderWaterPostEffect()
+		{
+		}
+
+		// Token: 0x04000D1D RID: 3357
 		public bool disableOnClip = true;
 
-		// Token: 0x04000E5C RID: 3676
+		// Token: 0x04000D1E RID: 3358
 		public bool controlUnderwaterMode;
 
-		// Token: 0x04000E5D RID: 3677
+		// Token: 0x04000D1F RID: 3359
 		public bool attenuateBySun;
 
-		// Token: 0x04000E5E RID: 3678
+		// Token: 0x04000D20 RID: 3360
 		public ImageBlur.BLUR_MODE blurMode;
 
-		// Token: 0x04000E5F RID: 3679
-		// MOD - This contructor has a DEFAULT value 3.
+		// Token: 0x04000D21 RID: 3361
 		[Range(0f, 4f)]
-		public int blurIterations;
+		public int blurIterations = 3;
 
-		// Token: 0x04000E60 RID: 3680
-		// MOD - This contructor has a DEFAULT value 0.6f.
+		// Token: 0x04000D22 RID: 3362
 		[Range(0.5f, 1f)]
-		private float blurSpread;
+		private float blurSpread = 0.6f;
 
-		// Token: 0x04000E61 RID: 3681
+		// Token: 0x04000D23 RID: 3363
 		public Shader underWaterPostEffectSdr;
 
-		// Token: 0x04000E62 RID: 3682
+		// Token: 0x04000D24 RID: 3364
 		[HideInInspector]
 		public Shader blurShader;
 
-		// Token: 0x04000E63 RID: 3683
+		// Token: 0x04000D25 RID: 3365
 		private Material m_material;
 
-		// Token: 0x04000E64 RID: 3684
+		// Token: 0x04000D26 RID: 3366
 		private ImageBlur m_imageBlur;
 
-		// Token: 0x04000E65 RID: 3685
+		// Token: 0x04000D27 RID: 3367
 		private WaveQuery m_query;
 
-		// Token: 0x04000E66 RID: 3686
+		// Token: 0x04000D28 RID: 3368
 		private bool m_underWaterIsVisible;
 
-		// Token: 0x04000E67 RID: 3687
+		// Token: 0x04000D29 RID: 3369
 		private static readonly Vector4[] m_corners = new Vector4[]
 		{
 			new Vector4(-1f, -1f, -1f, 1f),
