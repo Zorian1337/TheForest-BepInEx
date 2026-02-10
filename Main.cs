@@ -34,11 +34,12 @@ namespace Forest_Mod
             }
 
 
-            GameObject go = new GameObject("ForestMod_OffhandManager");
-            DontDestroyOnLoad(go);
-            go.AddComponent<OffhandManager>();
+            // This is for testing
+            //GameObject go = new GameObject("ForestMod_OffhandManager");
+            //DontDestroyOnLoad(go);
+            //go.AddComponent<OffhandManager>();
 
-            Logger.LogInfo("OffhandManager injected");
+            //Logger.LogInfo("OffhandManager injected");
 
             Main.harmony = new Harmony("forest.multipatch.zorian");
             Main.harmony.PatchAll();
