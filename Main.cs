@@ -15,14 +15,13 @@ namespace Forest_Mod
 {
 
 
-    [BepInPlugin("forest.multipatch.zorian", ModName, "1.0")]
+    [BepInPlugin("forest.multipatch.zorian", "TheForest-MultiPatch", "1.0")]
     public class Main : BaseUnityPlugin
     {
-        public const string ModName = TheForest-MultiPatch;
+        public const string ModName = "TheForest-MultiPatch";
 
         private void Awake()
         {
-            test
             Main.Instance = this;
             Main._Logger = base.Logger;
             base.Logger.LogInfo($"{ModName} loaded");
