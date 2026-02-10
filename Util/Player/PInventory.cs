@@ -13,8 +13,8 @@ namespace Forest_Mod.Util.Player
     public static class PInventory
     {
         //LOOK INTO CONVERTING TO INVGAMEITEM LATER, ALSO LOOK INTO INVEQUIPMENT
-        public static InventoryItemView GetHeldItem(Item.EquipmentSlot slots = Item.EquipmentSlot.RightHand) => References.GetPlayerInventory().EquipmentSlots[(int)slots]; //Player._inventory
-        public static InventoryItemView GetHeldItem(PlayerInventory Inventory, Item.EquipmentSlot slots = Item.EquipmentSlot.RightHand) => Inventory.EquipmentSlots[(int)slots]; //Player._inventory
+        //public static InventoryItemView GetHeldItem(Item.EquipmentSlot slots = Item.EquipmentSlot.RightHand) => References.GetPlayerInventory().EquipmentSlots[(int)slots]; //Player._inventory
+        //public static InventoryItemView GetHeldItem(PlayerInventory Inventory, Item.EquipmentSlot slots = Item.EquipmentSlot.RightHand) => Inventory.EquipmentSlots[(int)slots]; //Player._inventory
         //playerAnimatorControl - has lighterid(LocalPlayer.AnimControl._lighterId) and torchid (probably counts as flashlight)
 
         //PlayerStats.switchToLighter

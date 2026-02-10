@@ -75,6 +75,8 @@
     <Compile Include="Configs\ItemInventoryConfig.cs" />
     <Compile Include="Configs\WireAllConfigs.cs" />
     <Compile Include="Custom\OffhandManager.cs" />
+    <Compile Include="Events\Networking\CoopCallbacks.cs" />
+    <Compile Include="Events\Networking\WireNetEvents.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\InventoryExtension.cs" />
     <Compile Include="Main.cs" />
