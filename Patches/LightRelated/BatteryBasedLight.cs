@@ -18,9 +18,6 @@ namespace Forest_Mod.Patches
 
             netPlayerVis component = __instance.transform.root.GetComponent<netPlayerVis>();
             ReflectionHelper.SetPrivateField(__instance, "_vis", component);
-
-
-
             return false;
         }
 
@@ -30,6 +27,6 @@ namespace Forest_Mod.Patches
             return 100f / ActiveTimeSeconds;
         }
 
-        public static int GetBatteryRemainingTimeInSeconds(float RemainingBattery, float BatteryCostInSeconds) => (RemainingBattery / BatteryCostInSeconds);
+        //public static int GetBatteryRemainingTimeInSeconds(float RemainingBattery, float BatteryCostInSeconds) => (RemainingBattery / BatteryCostInSeconds);
     }
 }
