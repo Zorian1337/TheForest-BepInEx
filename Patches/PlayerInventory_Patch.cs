@@ -20,14 +20,13 @@ namespace Forest_Mod.Patches
             // After ItemCache init we inject our custom items 
             var inst = __instance;
 
-
             var db = inst._itemDatabase;
             
             if(instance is null) Main._Logger.LogInfo("Instance is null");
 
             List<TheForest.Items.Item> Items = new List<Item>(instance._items);//(db._items);
 
-            //// Add custom items to items
+            // Add custom items to items
             var NewItemList = CustomItemManagerTEMP.LoadAllCustomItemsV2(Items).OrderBy(x => x._id).ToArray();
 
             instance._items = NewItemList;
