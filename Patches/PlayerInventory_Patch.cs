@@ -14,42 +14,32 @@ namespace Forest_Mod.Patches
     {
         private static void Postfix(PlayerInventory __instance)
         {
+            var instance = ReflectionHelper.GetStaticField<ItemDatabase>(typeof(ItemDatabase), "_instance");
+            Main._Logger.LogInfo("Injecting into DB instance: " + instance.GetHashCode());
+           
             // After ItemCache init we inject our custom items 
             var inst = __instance;
 
+
             var db = inst._itemDatabase;
+            
+            if(instance is null) Main._Logger.LogInfo("Instance is null");
 
-            List<TheForest.Items.Item> Items = new List<Item>(db._items);
-
-
-            Main._Logger.LogInfo($"BEFORE");
-            foreach (var tm in Items)
-            {
-                Main._Logger.LogInfo($"Item: {tm._id} - Name: {tm._name} - Cache: {ItemDatabase.ItemIndexById(tm._id)}");
-            }
+            List<TheForest.Items.Item> Items = new List<Item>(instance._items);//(db._items);
 
             //// Add custom items to items
             var NewItemList = CustomItemManagerTEMP.LoadAllCustomItemsV2(Items).OrderBy(x => x._id).ToArray();
 
-            db._items = NewItemList;
+            instance._items = NewItemList;
 
             // recache immediately
-            var _itemsCache = ReflectionHelper.GetField<Dictionary<int, Item>>(db, "_itemsCache");
-            _itemsCache = db._items.ToDictionary((Item item) => item._id);
+            var _itemsCache = ReflectionHelper.GetField<Dictionary<int, Item>>(instance, "_itemsCache");
+            _itemsCache = instance._items.ToDictionary((Item item) => item._id);
+            ReflectionHelper.SetPrivateField(instance, "_itemsCache", _itemsCache);
+            
+            string Itemname = "Stun Baton";
+            //Main._Logger.LogInfo($"ValidCacheKey: {ItemDatabase.IsItemidValid(instance._items.Where(x => x._name == Itemname).First()._id)}");
 
-            Main._Logger.LogInfo($"DICTIONARY");
-            foreach (var item in _itemsCache)
-            {
-                Main._Logger.LogInfo($"Key: {item.Key} - Name: {item.Value._name} - Cache: {ItemDatabase.ItemIndexById(item.Value._id)}");
-            }
-
-            Main._Logger.LogInfo($"AFTER");
-
-            foreach (var tm in NewItemList)
-            {
-                Main._Logger.LogInfo($"Item: {tm._id} - Name: {tm._name} - Cache: {ItemDatabase.ItemIndexById(tm._id)}");
-            }
-            Main._Logger.LogInfo($"ItemDatabase has been modified");
         }
     }
 }

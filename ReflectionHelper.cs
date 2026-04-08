@@ -23,11 +23,11 @@ namespace Forest_Mod
         }
 
         private const BindingFlags Flags =
-    BindingFlags.Instance |
-    BindingFlags.Static |
-    BindingFlags.Public |
-    BindingFlags.NonPublic |
-    BindingFlags.FlattenHierarchy;
+        BindingFlags.Instance |
+        BindingFlags.Static |
+        BindingFlags.Public |
+        BindingFlags.NonPublic |
+        BindingFlags.FlattenHierarchy;
 
         // ---------- FIELDS ----------
         public static T GetField<T>(object instance, string fieldName)
@@ -36,6 +36,12 @@ namespace Forest_Mod
 
             var field = instance.GetType().GetField(fieldName, Flags);
             return field != null ? (T)field.GetValue(instance) : default;
+        }
+
+        public static T GetStaticField<T>(Type type, string fieldName)
+        {
+            var field = type.GetField(fieldName, Flags);
+            return field != null ? (T)field.GetValue(null) : default;
         }
 
         public static void SetField(object instance, string fieldName, object value)

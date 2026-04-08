@@ -9,7 +9,7 @@ namespace Forest_Mod.Events.Networking
     {
         public void Reg()
         {
-            BoltNetwork.RegisterTokenClass
+            //BoltNetwork.RegisterTokenClass
         }
         
     }

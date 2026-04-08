@@ -1,0 +1,231 @@
+Name: BombTimed, Id: 29, MaxAmount: 5, Type Equipment, CraftingMaterial, Projectile
+Name: CBoard, Id: 31, MaxAmount: 5, Type CraftingMaterial
+Name: Cloth, Id: 33, MaxAmount: 0, Type CraftingMaterial
+Name: Leaf, Id: 34, MaxAmount: 10000, Type CraftingMaterial, Plant
+Name: TapeSticky, Id: 280, MaxAmount: 0, Type CraftingMaterial
+Name: Lizard, Id: 35, MaxAmount: 3, Type Equipment, Edible, Droppable
+Name: Battery, Id: 36, MaxAmount: 0, Type CraftingMaterial
+Name: Fuel, Id: 262, MaxAmount: 5, Type Edible
+Name: Booze, Id: 37, MaxAmount: 7, Type CraftingMaterial, Edible
+Name: Cash, Id: 38, MaxAmount: 10000, Type 0
+Name: Watch, Id: 41, MaxAmount: 4, Type CraftingMaterial
+Name: Feather, Id: 42, MaxAmount: 0, Type CraftingMaterial
+Name: Flare, Id: 43, MaxAmount: 10, Type Equipment, CraftingMaterial, Droppable, Projectile, Plant
+Name: FlareGun, Id: 44, MaxAmount: 1, Type Equipment, CraftingMaterial, RangedWeapon, Weapon
+Name: FlintLock, Id: 230, MaxAmount: 1, Type Equipment, CraftingMaterial, RangedWeapon, Weapon
+Name: FlintLock part 1, Id: 232, MaxAmount: 1, Type CraftingMaterial
+Name: FlintLock part 2, Id: 233, MaxAmount: 1, Type CraftingMaterial, Droppable
+Name: FlintLock part 3, Id: 234, MaxAmount: 1, Type CraftingMaterial, Droppable
+Name: FlintLock part 4, Id: 235, MaxAmount: 1, Type CraftingMaterial, Droppable
+Name: FlintLock part 5, Id: 236, MaxAmount: 1, Type CraftingMaterial, Droppable
+Name: FlintLock part 6, Id: 237, MaxAmount: 1, Type CraftingMaterial, Droppable
+Name: FlintLock part 7, Id: 238, MaxAmount: 1, Type CraftingMaterial, Droppable
+Name: FlintLock part 8, Id: 241, MaxAmount: 1, Type CraftingMaterial, Droppable
+Name: Head, Id: 46, MaxAmount: 1, Type Equipment, CraftingTool, CraftingMaterial, Droppable
+Name: Leg, Id: 47, MaxAmount: 2, Type Equipment, Edible, Droppable
+Name: Lighter, Id: 48, MaxAmount: 1, Type Equipment, Special
+Name: Meds, Id: 49, MaxAmount: 5, Type Edible
+Name: PlasticTorch, Id: 51, MaxAmount: 2, Type Equipment, CraftingMaterial, Special
+Name: PlasticTorch_Bow, Id: 283, MaxAmount: 1, Type CraftingMaterial, Extension
+Name: PlasticTorch_ModernBow, Id: 287, MaxAmount: 1, Type CraftingMaterial, Extension
+Name: PlasticTorch_Chainsaw, Id: 288, MaxAmount: 1, Type CraftingMaterial, Extension
+Name: PlasticTorch_Flintlock, Id: 289, MaxAmount: 1, Type CraftingMaterial, Extension
+Name: Rock, Id: 53, MaxAmount: 5, Type Equipment, CraftingMaterial
+Name: Rope, Id: 54, MaxAmount: 4, Type CraftingMaterial
+Name: Spear, Id: 56, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: Stick, Id: 57, MaxAmount: 10, Type Equipment, CraftingMaterial
+Name: Tooth, Id: 60, MaxAmount: 0, Type CraftingMaterial
+Name: Walkman, Id: 61, MaxAmount: 1, Type Equipment, CraftingMaterial, Special
+Name: Pedometer, Id: 63, MaxAmount: 1, Type Equipment, Special
+Name: Marigold, Id: 67, MaxAmount: 10, Type CraftingMaterial, Edible, Plant
+Name: MedicineCrafted, Id: 68, MaxAmount: 5, Type CraftingMaterial, Edible
+Name: MedicineCraftedPlus, Id: 212, MaxAmount: 5, Type CraftingMaterial, Edible
+Name: Cassette 1, Id: 69, MaxAmount: 1, Type CraftingTool, CraftingMaterial
+Name: Molotov, Id: 71, MaxAmount: 9, Type Equipment, CraftingMaterial, Droppable, Projectile
+Name: SurvivalBook, Id: 74, MaxAmount: 1, Type -14208
+Name: FireStick, Id: 75, MaxAmount: 1, Type -14315
+Name: Hairspray, Id: 291, MaxAmount: 1, Type -10239
+Name: Rabbit Dead, Id: 76, MaxAmount: 3, Type Equipment, Edible, Droppable, Ammo
+Name: Rabbit Alive, Id: 77, MaxAmount: -1, Type Equipment, Droppable, RangedWeapon
+Name: Log, Id: 78, MaxAmount: -1, Type Equipment, Droppable
+Name: Bow, Id: 79, MaxAmount: 1, Type Equipment, CraftingMaterial, RangedWeapon, Weapon
+Name: BowCross, Id: 306, MaxAmount: 1, Type Equipment, CraftingMaterial, RangedWeapon, Weapon
+Name: Slingshot, Id: 281, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: RecurveBow, Id: 279, MaxAmount: 1, Type Equipment, CraftingMaterial, RangedWeapon, Weapon
+Name: Axe Plane, Id: 80, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: Chainsaw, Id: 261, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: Tennis Ball, Id: 81, MaxAmount: -1, Type Equipment, Droppable, Projectile
+Name: ArtifactBall, Id: 294, MaxAmount: 1, Type Equipment
+Name: Small Rock, Id: 82, MaxAmount: 10, Type Equipment, Ammo, Projectile
+Name: Arrows, Id: 83, MaxAmount: 30, Type CraftingMaterial, Ammo
+Name: AxeRusty, Id: 86, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: AxeCrafted, Id: 87, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: RepairTool, Id: 257, MaxAmount: 1, Type Equipment, Craftable
+Name: AxeModern, Id: 88, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: ChocolateBar, Id: 89, MaxAmount: 15, Type Edible
+Name: Arm, Id: 90, MaxAmount: 2, Type Equipment, Edible, Droppable
+Name: Coins, Id: 91, MaxAmount: 0, Type CraftingMaterial
+Name: LizardSkin, Id: 92, MaxAmount: 10, Type CraftingMaterial, Edible, Armor
+Name: Skull, Id: 94, MaxAmount: 4, Type Equipment, CraftingTool, CraftingMaterial
+Name: ClubCrafted, Id: 95, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: Club, Id: 96, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: ConeFlower, Id: 97, MaxAmount: 10, Type CraftingMaterial, Edible, Plant
+Name: Chicory, Id: 98, MaxAmount: 10, Type CraftingMaterial, Edible, Plant
+Name: Aloe, Id: 99, MaxAmount: 10, Type CraftingMaterial, Edible, Plant
+Name: EnergyMix, Id: 100, MaxAmount: 5, Type CraftingMaterial, Edible
+Name: EnergyMixPlus, Id: 213, MaxAmount: 5, Type CraftingMaterial, Edible
+Name: HeadBomb, Id: 101, MaxAmount: 1, Type Equipment, CraftingMaterial, Projectile
+Name: Seed_Aloe, Id: 103, MaxAmount: 0, Type CraftingTool, Plant
+Name: TreeSap, Id: 104, MaxAmount: 0, Type CraftingMaterial
+Name: StickUpgraded, Id: 105, MaxAmount: 1, Type -12283
+Name: RockUpgraded, Id: 106, MaxAmount: 1, Type -12283
+Name: FlareGunAmmo, Id: 107, MaxAmount: 0, Type Ammo
+Name: flintlockAmmo, Id: 231, MaxAmount: 0, Type Ammo
+Name: CrossbowAmmo, Id: 307, MaxAmount: 10, Type Ammo
+Name: Glass, Id: 108, MaxAmount: 0, Type CraftingMaterial
+Name: Soda, Id: 109, MaxAmount: 10, Type Edible
+Name: PlaneFood, Id: 110, MaxAmount: 1, Type Edible
+Name: twinberry, Id: 112, MaxAmount: 30, Type CraftingMaterial, Edible, Plant
+Name: SnowBerry, Id: 113, MaxAmount: 30, Type CraftingMaterial, Edible, Plant
+Name: BlueBerry, Id: 114, MaxAmount: 30, Type CraftingTool, CraftingMaterial, Edible, Plant
+Name: MushroomAmanita, Id: 115, MaxAmount: 10, Type CraftingMaterial, Edible
+Name: MushroomJack, Id: 277, MaxAmount: 10, Type CraftingMaterial, Edible
+Name: MushroomChanterelle, Id: 116, MaxAmount: 10, Type Edible
+Name: MushroomDeerMush, Id: 278, MaxAmount: 10, Type Edible
+Name: MushroomLibertyCap, Id: 276, MaxAmount: 10, Type Edible
+Name: MushroomPuffmush, Id: 275, MaxAmount: 10, Type Edible
+Name: Cassette 2, Id: 117, MaxAmount: 1, Type CraftingTool, CraftingMaterial
+Name: Cassette 4, Id: 118, MaxAmount: 1, Type CraftingTool, CraftingMaterial
+Name: Cassette 3, Id: 119, MaxAmount: 1, Type CraftingTool, CraftingMaterial
+Name: Cassette 5, Id: 120, MaxAmount: 1, Type CraftingTool, CraftingMaterial
+Name: CamcorderTape1, Id: 269, MaxAmount: 1, Type CraftingMaterial, Story
+Name: CamcorderTape2, Id: 272, MaxAmount: 1, Type CraftingMaterial, Story
+Name: CamcorderTape4, Id: 271, MaxAmount: 1, Type CraftingMaterial, Story
+Name: CamcorderTape5, Id: 274, MaxAmount: 1, Type CraftingMaterial, Story
+Name: CamcorderTape6, Id: 273, MaxAmount: 1, Type CraftingMaterial, Story
+Name: CamcorderTape3, Id: 270, MaxAmount: 1, Type CraftingMaterial, Story
+Name: WalkyTalky, Id: 122, MaxAmount: 1, Type Equipment, Special
+Name: GenericMeat, Id: 123, MaxAmount: 4, Type Equipment, Edible, Droppable
+Name: DeerSkin, Id: 126, MaxAmount: 10, Type CraftingMaterial
+Name: Warmsuit, Id: 299, MaxAmount: 1, Type Equipment, CraftingMaterial, Armor
+Name: BoarSkin, Id: 292, MaxAmount: 10, Type CraftingMaterial
+Name: RacoonSkin, Id: 293, MaxAmount: 10, Type CraftingMaterial
+Name: Cod, Id: 127, MaxAmount: 3, Type Equipment, Edible, Droppable
+Name: RabbitSkin, Id: 129, MaxAmount: 10, Type CraftingMaterial
+Name: Pouch, Id: 130, MaxAmount: 1, Type Equipment, CraftingMaterial
+Name: BluePaint, Id: 131, MaxAmount: 3, Type CraftingMaterial
+Name: OrangePaint, Id: 132, MaxAmount: 3, Type CraftingMaterial
+Name: Toy_Head, Id: 133, MaxAmount: 1, Type Equipment, CraftingMaterial, Story
+Name: Toy_Arm, Id: 134, MaxAmount: 2, Type Equipment, CraftingMaterial, Story
+Name: Toy_Leg, Id: 135, MaxAmount: 2, Type Equipment, CraftingMaterial, Story
+Name: Toy_Torso, Id: 136, MaxAmount: 1, Type Equipment, CraftingMaterial, Story
+Name: StealthArmor, Id: 137, MaxAmount: 10, Type CraftingMaterial, Edible, Armor
+Name: Axe Climbing, Id: 138, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: Map_Cave2, Id: 139, MaxAmount: 6, Type Equipment, Special
+Name: Cross, Id: 140, MaxAmount: 1, Type Equipment, Story
+Name: PaintBrush, Id: 240, MaxAmount: 1, Type Equipment, Story
+Name: TurtleShell, Id: 141, MaxAmount: 1, Type Equipment
+Name: Pot, Id: 142, MaxAmount: 1, Type Equipment, Edible
+Name: Rebreather, Id: 143, MaxAmount: 1, Type Equipment
+Name: AirCanister, Id: 144, MaxAmount: 4, Type Edible
+Name: Waterskin, Id: 145, MaxAmount: 1, Type Equipment, CraftingMaterial, Edible
+Name: MagazineCaver, Id: 147, MaxAmount: 0, Type Equipment, Story
+Name: Magazine, Id: 148, MaxAmount: 0, Type Equipment, Story
+Name: MagazineLimestone, Id: 149, MaxAmount: 0, Type Equipment, Story
+Name: Bible, Id: 150, MaxAmount: 0, Type Equipment, Story
+Name: PolaroidYacht, Id: 152, MaxAmount: 0, Type Equipment, Story
+Name: PolaroidKeyCard1, Id: 258, MaxAmount: 0, Type Equipment, Story
+Name: PolaroidKeyCard2, Id: 259, MaxAmount: 0, Type Equipment, Story
+Name: PolaroidKeyCard3, Id: 260, MaxAmount: 0, Type Equipment, Story
+Name: PageChurch, Id: 308, MaxAmount: 0, Type Equipment, Story
+Name: PageGlider, Id: 309, MaxAmount: 0, Type Equipment, Story
+Name: PageRollercoaster, Id: 310, MaxAmount: 0, Type Equipment, Story
+Name: PageTower, Id: 311, MaxAmount: 0, Type Equipment, Story
+Name: PhotoCache1, Id: 220, MaxAmount: 0, Type Equipment, Story
+Name: PhotoCache2, Id: 226, MaxAmount: 0, Type Equipment, Story
+Name: PhotoCache3, Id: 225, MaxAmount: 0, Type Equipment, Story
+Name: PhotoCache8, Id: 224, MaxAmount: 0, Type Equipment, Story
+Name: PhotoCache9, Id: 227, MaxAmount: 0, Type Equipment, Story
+Name: PhotoTimmy, Id: 302, MaxAmount: 1, Type Equipment, Story
+Name: PhotoCache6, Id: 223, MaxAmount: 0, Type Equipment, Story
+Name: PhotoCache5, Id: 222, MaxAmount: 0, Type Equipment, Story
+Name: shippingManifest, Id: 229, MaxAmount: 0, Type Equipment, Story
+Name: RestrainingOrder, Id: 243, MaxAmount: 0, Type Equipment, Story
+Name: TerminationLetter, Id: 244, MaxAmount: 0, Type Equipment, Story
+Name: MorgueReport, Id: 245, MaxAmount: 0, Type Equipment, Story
+Name: BiblePage1, Id: 246, MaxAmount: 0, Type Equipment, Story
+Name: MeganDrawingFlower, Id: 251, MaxAmount: 0, Type Equipment, Story
+Name: MeganDrawingUnicorn, Id: 253, MaxAmount: 0, Type Equipment, Story
+Name: MeganDrawingDaddy, Id: 252, MaxAmount: 0, Type Equipment, Story
+Name: MeganDrawingDino, Id: 254, MaxAmount: 0, Type Equipment, Story
+Name: MeganCrayons, Id: 248, MaxAmount: 0, Type Equipment, Story
+Name: Camcorder, Id: 267, MaxAmount: 1, Type Equipment, CraftingMaterial, Special, Story
+Name: ArtifactPhoto, Id: 249, MaxAmount: 0, Type Equipment, Story
+Name: EmailPlane, Id: 255, MaxAmount: 0, Type Equipment, Story
+Name: EmailPhoto, Id: 256, MaxAmount: 0, Type Equipment, Story
+Name: BiblePage2, Id: 247, MaxAmount: 0, Type Equipment, Story
+Name: BiblePage3, Id: 303, MaxAmount: 0, Type Equipment, Story
+Name: PhotoCache4, Id: 221, MaxAmount: 0, Type Equipment, Story
+Name: PolaroidMegan, Id: 219, MaxAmount: 0, Type Equipment, Story
+Name: PolaroidVagz, Id: 153, MaxAmount: 0, Type Equipment, Story
+Name: SketchSinkhole, Id: 154, MaxAmount: 0, Type Equipment, Story
+Name: SketchVagz, Id: 155, MaxAmount: 0, Type Equipment, Story
+Name: MapPiece_1, Id: 156, MaxAmount: 1, Type Equipment, CraftingMaterial
+Name: MapPiece_2, Id: 157, MaxAmount: 1, Type Equipment, CraftingMaterial
+Name: MapPiece_4, Id: 159, MaxAmount: 1, Type Equipment, CraftingMaterial
+Name: MapPiece_3, Id: 165, MaxAmount: 1, Type Equipment, CraftingMaterial
+Name: MapFull, Id: 169, MaxAmount: 1, Type Equipment, CraftingMaterial
+Name: Compass, Id: 173, MaxAmount: 1, Type Equipment, Special
+Name: dynamite, Id: 175, MaxAmount: 5, Type Equipment, Droppable, Projectile
+Name: MilkCarton, Id: 176, MaxAmount: 1, Type Equipment, Story
+Name: SpearUpgraded, Id: 177, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: bone, Id: 178, MaxAmount: 15, Type Equipment, CraftingTool, CraftingMaterial
+Name: ToyFull, Id: 179, MaxAmount: 1, Type Equipment, CraftingMaterial, Story
+Name: Katana, Id: 180, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: Machete, Id: 265, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: Oyster, Id: 181, MaxAmount: 10, Type Edible, Droppable
+Name: PolaroidTeddy, Id: 182, MaxAmount: 0, Type Equipment, Story
+Name: NewspaperStripper, Id: 183, MaxAmount: 0, Type Equipment, Story
+Name: TennisRaquet, Id: 184, MaxAmount: 1, Type Equipment, CraftingMaterial, Weapon
+Name: AnimalHead_rabbit, Id: 185, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Boar, Id: 186, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Deer, Id: 187, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Crocodile, Id: 188, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Racoon, Id: 189, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Lizard, Id: 190, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Seagul, Id: 191, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Squirrel, Id: 192, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Tortoise, Id: 193, MaxAmount: -1, Type Equipment, Droppable
+Name: CreepyHead_Armsy, Id: 295, MaxAmount: -1, Type Equipment, Droppable
+Name: CreepyHead_Baby, Id: 296, MaxAmount: -1, Type Equipment, Droppable
+Name: CreepyHead_Fat, Id: 297, MaxAmount: -1, Type Equipment, Droppable
+Name: CreepyHead_Vag, Id: 298, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Goose, Id: 194, MaxAmount: -1, Type Equipment, Droppable
+Name: AnimalHead_Shark, Id: 195, MaxAmount: -1, Type Equipment, Droppable
+Name: CaveMap, Id: 196, MaxAmount: 1, Type Equipment, Special, Story
+Name: PassengerManifest, Id: 197, MaxAmount: 1, Type Equipment, Story
+Name: MetalTinTray, Id: 198, MaxAmount: 1, Type Equipment, CraftingMaterial, Special
+Name: SnowShoes, Id: 199, MaxAmount: 1, Type Equipment, CraftingMaterial
+Name: Quiver , Id: 200, MaxAmount: 1, Type Craftable
+Name: RockBag, Id: 214, MaxAmount: 1, Type Craftable
+Name: StickBag, Id: 215, MaxAmount: 1, Type Craftable
+Name: SmallRockBag, Id: 282, MaxAmount: 1, Type Craftable
+Name: SpearBag, Id: 290, MaxAmount: 1, Type Craftable
+Name: RabbitFurBoots, Id: 201, MaxAmount: 1, Type Equipment, CraftingMaterial
+Name: fortune, Id: 202, MaxAmount: 1, Type Equipment, Story
+Name: BookDarkHaired, Id: 203, MaxAmount: 1, Type Equipment, Story
+Name: BoneArmor, Id: 204, MaxAmount: 10, Type CraftingMaterial, Edible, Armor
+Name: CreepySkin, Id: 301, MaxAmount: 10, Type CraftingMaterial, Edible, Armor
+Name: Seed_Coneflower, Id: 205, MaxAmount: 0, Type CraftingTool, Plant
+Name: Seed_BlueBerry, Id: 206, MaxAmount: 30, Type CraftingTool, Plant
+Name: SmallGenericMeat, Id: 207, MaxAmount: 3, Type Equipment, Edible, Droppable
+Name: TimmyDrawing, Id: 208, MaxAmount: 10, Type Equipment, Story
+Name: Magazine_reality, Id: 209, MaxAmount: 10, Type Equipment, Story
+Name: ChainsawAd, Id: 263, MaxAmount: 10, Type Equipment, Story
+Name: Magazine_science, Id: 218, MaxAmount: 10, Type Equipment, Story
+Name: Keycard, Id: 210, MaxAmount: 1, Type Equipment, Story
+Name: artifactKey, Id: 305, MaxAmount: 1, Type Equipment, Story
+Name: KeycardElevator, Id: 242, MaxAmount: 1, Type Equipment, Story
+Name: SketchArtifact, Id: 217, MaxAmount: 10, Type Equipment, Story
+Name: SketchArtifact4, Id: 250, MaxAmount: 10, Type Equipment, Story
+Name: BlackBerry, Id: 211, MaxAmount: 30, Type CraftingTool, CraftingMaterial, Edible, Plant

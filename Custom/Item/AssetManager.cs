@@ -6,6 +6,10 @@ using UnityEngine;
 
 namespace Forest_Mod
 {
+    //Try to patch into the base asset loader of the game to load our bundles
+
+    //TheForest.Utils.AssetBundle
+
     public static class AssetManager
     {
         public static List<AssetBundle> LoadedBundles;

@@ -2,6 +2,8 @@
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using Forest_Mod.Configs;
+using Forest_Mod.Custom;
+
 //using Forest_Mod.Custom;
 using Forest_Mod.Util;
 using HarmonyLib;
@@ -26,8 +28,8 @@ namespace Forest_Mod
             Main._Logger = base.Logger;
             base.Logger.LogInfo($"{ModName} loaded");
             Main.ConfigFile = base.Config;
-            WireAllConfigs.Wire(base.Config, true);
-            base.Logger.LogInfo("{ModName}} checking config");
+            ManageConfigs.Wire(base.Config, true);
+            base.Logger.LogInfo($"{ModName} checking config");
             foreach (KeyValuePair<ConfigDefinition, ConfigEntryBase> keyValuePair in base.Config)
             {
                 base.Logger.LogInfo(string.Format("Key: {0}, Value: {1}", keyValuePair.Key, keyValuePair.Value.BoxedValue));
@@ -35,9 +37,9 @@ namespace Forest_Mod
 
 
             // This is for testing
-            //GameObject go = new GameObject("ForestMod_OffhandManager");
-            //DontDestroyOnLoad(go);
-            //go.AddComponent<OffhandManager>();
+            GameObject go = new GameObject("ForestMod_OffhandManager");
+            DontDestroyOnLoad(go);
+            go.AddComponent<OffhandManager>();
 
             //Logger.LogInfo("OffhandManager injected");
 
@@ -54,7 +56,7 @@ namespace Forest_Mod
                 Main.harmony.UnpatchSelf();
                 Main.harmony = null;
             }
-            WireAllConfigs.Wire(base.Config, true);
+            ManageConfigs.Wire(base.Config, true);
         }
 
 

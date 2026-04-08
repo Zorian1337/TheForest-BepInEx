@@ -26,22 +26,15 @@ namespace Forest_Mod.Configs
 
         public static ConfigEntry<string> UseDefaultStackLimitByType;
 
-        private static EventHandler<SettingChangedEventArgs> _configHandler;
+        //private static EventHandler<SettingChangedEventArgs> _configHandler;
 
-        public static string SECTION = "ItemInventory.StackLimits";
+        public const string SECTION = "ItemInventory.StackLimits";
+
 
         public static void Init(ConfigFile config, bool IsWire)
         {
-            //if (ItemInventoryConfig._configHandler is null)
-            //{
-            //    ItemInventoryConfig._configHandler = delegate (object _, SettingChangedEventArgs e)
-            //    {
-            //        if (e.ChangedSetting.Definition.Section == SECTION) ItemInventoryConfig.Parse();
-            //    };
-            //}
-
-            if (IsWire && !(ItemInventoryConfig._configHandler is null)) config.SettingChanged += ItemInventoryConfig._configHandler;
-            else config.SettingChanged -= ItemInventoryConfig._configHandler;
+            //if (IsWire && !(ItemInventoryConfig._configHandler is null)) config.SettingChanged += ItemInventoryConfig._configHandler;
+            //else config.SettingChanged -= ItemInventoryConfig._configHandler;
 
             ItemInventoryConfig.IsEnabled = config.Bind<bool>(SECTION, "IsEnabled", true, "Enables or disables the custom stack limit (True: On, False: Off)");
             ItemInventoryConfig.CustomStackLimit = config.Bind<int>(SECTION, "CustomStackLimit", 999, "Sets the default item maximum to this number (if item isn't manually set to another)");
@@ -52,8 +45,10 @@ namespace Forest_Mod.Configs
             ItemInventoryConfig.Parse();
         }
 
+
+
         public static List<StackLimitTracker> CustomStackLimitList = new List<StackLimitTracker>();
-        private static void Parse()
+        public static void Parse()
         {
             string rawStackLimitStackById = ItemInventoryConfig.LimitStackById.Value;
             string rawStackLimitByName = ItemInventoryConfig.LimitStackByName.Value;
@@ -169,13 +164,13 @@ namespace Forest_Mod.Configs
                             break;
                     }
                 }
-                Main._Logger.LogInfo($"");
+                //Main._Logger.LogInfo($"");
 
 
-                foreach (var item in CustomStackLimitList)
-                {
-                    Main._Logger.LogInfo($"ItemId: {item?.ItemId} -ItemName: {item?.ItemName} - ItemType: {item?.ItemType.ToString()} - MaxAmount: {item.MaxAmount} - Filter: {item.TypeLimit.ToString()}");
-                }
+                //foreach (var item in CustomStackLimitList)
+                //{
+                //    Main._Logger.LogInfo($"ItemId: {item?.ItemId} -ItemName: {item?.ItemName} - ItemType: {item?.ItemType.ToString()} - MaxAmount: {item.MaxAmount} - Filter: {item.TypeLimit.ToString()}");
+                //}
 
             }
 

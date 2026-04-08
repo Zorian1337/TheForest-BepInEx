@@ -1,4 +1,5 @@
-﻿using Pathfinding;
+﻿using Forest_Mod.Util;
+using Pathfinding;
 using System;
 using System.CodeDom;
 using System.Collections;
@@ -16,9 +17,17 @@ namespace Forest_Mod.Extensions
 {
     public static class InventoryExtension
     {
+        public static InventoryItemView[] GetEquipmentSlots(this PlayerInventory Inventory)
+        {
+            if (Inventory is null) return default;
+
+            return ReflectionHelper.GetField<InventoryItemView[]>(Inventory, "_equipmentSlots");
+        }
+
+        public static Item GetInSlot(this PlayerInventory Inventory, Item.EquipmentSlot Slot) => Inventory.GetEquipmentSlots()[(int)Slot].ItemCache;
         public static void EquipItem(this PlayerInventory Inventory, int ItemId, Item.EquipmentSlot Slot)
         {
-
+            
         }
 
         public static void EquipItem(this PlayerInventory Inventory, string Item, Item.EquipmentSlot Slot)
