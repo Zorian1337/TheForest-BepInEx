@@ -13,7 +13,7 @@ namespace Forest_Mod.Patches
             __instance._mainLight.range = 260f;
             __instance._mainLight.spotAngle = 135f;
             __instance.SetIntensity(10f); //was 22f looked bright but not as deadly, 30f was bright asf
-            __instance._batterieCostPerSecond = GetBatteryCostPerSecond(30);//0.000833333354f;
+            __instance._batterieCostPerSecond = GetBatteryCostPerSecond(60);
             __instance.SetColor(__instance._torchBaseColor);
 
             netPlayerVis component = __instance.transform.root.GetComponent<netPlayerVis>();
@@ -26,7 +26,5 @@ namespace Forest_Mod.Patches
             int ActiveTimeSeconds = ActiveTimeMinutes * 60;
             return 100f / ActiveTimeSeconds;
         }
-
-        //public static int GetBatteryRemainingTimeInSeconds(float RemainingBattery, float BatteryCostInSeconds) => (RemainingBattery / BatteryCostInSeconds);
     }
 }
